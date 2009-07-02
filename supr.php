@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: supr power 
-Plugin URI: http://su.pr/
-Description: supr power your tweets 
-Version: 1.0
+Plugin Name: Supr by StumbleUpon 
+Plugin URI: http://su.pr/developers/Supr:WordPress_Plugin/ 
+Description: Su.pr is the only URL shortener that also helps your content get discovered!  Every Su.pr URL exposes your content to StumbleUpon's nearly 8 million members. 
+Version: 0.2
 Author: StumbleUpon 
 Author URI: http://www.stumbleupon.com/
 */
