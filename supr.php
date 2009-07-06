@@ -178,7 +178,8 @@ function supr_post( $msg, $link ) {
 
 
 function supr_publish( $post_ID )  {
-
+	if ($_POST['action'] == 'post-quickpress-publish' || ($_POST['action'] == 'editpost' && $_POST['originalaction'] == "post"))
+	{
 		if (get_option( 'supr-enable' ) =='1')
 		{
 			$get_post_info = get_post( $post_ID );
@@ -199,8 +200,9 @@ function supr_publish( $post_ID )  {
 			$shrink = supr_post($tweet, $thispostlink);
 			return $post_ID;
 		}
-		else
-			return 0;
+	}
+	else
+		return 0;
 } 
 
 function supr_publish_future( $post_obj )  {
@@ -456,7 +458,6 @@ add_action( 'wp_head', 'supr_insert_tb' );
 }
 
 add_action( 'publish_post', 'supr_publish');
-add_action( 'new_to_publish', 'supr_quickpress', 12 );
 add_action( 'future_to_publish', 'supr_publish_future');
 add_action( 'future_post', 'add_futurepost_meta' );
 
