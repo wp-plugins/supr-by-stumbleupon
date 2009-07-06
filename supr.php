@@ -3,7 +3,7 @@
 Plugin Name: Supr by StumbleUpon 
 Plugin URI: http://su.pr/developers/Supr:WordPress_Plugin/ 
 Description: Su.pr is the only URL shortener that gets you more traffic and save time posting to Twitter, Facebook and StumbleUpon. Get short URLs on your very own domain!
-Version: 0.2
+Version: 0.2b
 Author: StumbleUpon 
 Author URI: http://www.stumbleupon.com/
 */
