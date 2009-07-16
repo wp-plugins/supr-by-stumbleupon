@@ -3,7 +3,7 @@
 Plugin Name: Supr by StumbleUpon 
 Plugin URI: http://su.pr/developers/Supr:WordPress_Plugin/ 
 Description: Su.pr is the only URL shortener that gets you more traffic and save time posting to Twitter, Facebook and StumbleUpon. Get short URLs on your very own domain!
-Version: 0.2b
+Version: 0.2
 Author: StumbleUpon 
 Author URI: http://www.stumbleupon.com/
 */
@@ -420,13 +420,15 @@ function custom_supr_redirect($hash)
 
 
 function supr_rewriterules($current){
-      $shortlink = "something";
-      $therule = "\nRewriteRule ^[a-zA-Z0-9]{1,4}$ ";
-      $therule .= "?supr=$0\n"; 
-      $therule .= "\nRewriteRule ^check_supr_install$ ";
-      $therule .= "?check_install=$0\n";
-      $therule .= "\nRewriteRule ^supr_settings.json$ ";
-      $therule .= "?supr_settings_json=$0\n";
+	$therule = '';
+	$therule .= "\nRewriteCond %{REQUEST_FILENAME} !-f\n";
+	$therule .= "\nRewriteCond %{REQUEST_FILENAME} !-d\n";	 
+	$therule .= "\nRewriteRule ^[a-zA-Z0-9]{1,4}$ ";
+	$therule .= "?supr=$0\n"; 
+	$therule .= "\nRewriteRule ^check_supr_install$ ";
+	$therule .= "?check_install=$0\n";
+	$therule .= "\nRewriteRule ^supr_settings.json$ ";
+	$therule .= "?supr_settings_json=$0\n";
 	//}
       $broken = explode("\n", $current);
          foreach ($broken as $value) {
